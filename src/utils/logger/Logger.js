@@ -1,4 +1,4 @@
-let time = `[${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}]`;
+const time = `[${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}]`;
 
 class Logger {
     info(message) {
