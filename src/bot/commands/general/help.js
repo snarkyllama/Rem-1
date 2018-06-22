@@ -1,4 +1,4 @@
-const { Command, GuildSchema } = require('../../../core');
+const { Command } = require('../../../core');
 const emotes = {
     Animals: ":dog:",
     Developers: ":tools:",
@@ -34,7 +34,7 @@ module.exports = class HelpCommand extends Command {
 
     async execute(ctx, args) {
         const categories = {};
-        let guild = await GuildSchema.findOne({ id: ctx.guild.id });
+        let guild = await ctx.getGuildSettings();
 
         if (!args[0]) {
             for (const cmd of this.client.cmds) {
@@ -50,12 +50,21 @@ module.exports = class HelpCommand extends Command {
             }
 
             return ctx.send({
-                description: `__**RemBot's Commands**__\n\tGuild Prefix: \`${guild.prefix.toString()}\`\n\tTo get extended help on a command, do \`${guild.prefix.toString()}help [command]\`\n\tTo execute a command, do \`${guild.prefix.toString()}<command>\` by replacing \`<command>\` the command you want!`,
+                description: `Guild Prefix: \`${guild.prefix.toString()}\`\nTo get extended help on a command, do \`${guild.prefix.toString()}help [command]\`\nTo execute a command, do \`${guild.prefix.toString()}<command>\` by replacing \`<command>\` the command you want!`,
                 fields: Object.keys(categories).map(c => ({
                     name: `${c in emotes ? emotes[c] : ":question:"} ${c}`,
                     value: "`" + categories[c].join('`, `') + "`"
                 })),
-                color: ctx.client.utils.color
+                color: ctx.client.utils.color,
+                footer: {
+                    icon_url: ctx.author.avatarURL,
+                    text: `${Object.keys(this.client.cmds).length} commands | Use ${guild.prefix.toString()}help <command> to get help on a command!`
+                },
+                author: {
+                    name: "RemBot | Commands",
+                    icon_url: this.client.user.avatarURL,
+                    url: 'https://rembot.xyz'
+                }
             });
         }
 
@@ -82,13 +91,13 @@ module.exports = class HelpCommand extends Command {
             color: this.client.utils.color
         };
 
-        if (command.options.aliases > 0) embed.fields.push({
+        if (command.options.aliases > 1) embed.fields.push({
             name: '❯ Aliases',
             value: `**${command.options.aliases.join(', ')}**`,
             inline: true
         });
 
-        if (command.options.examples > 0) embed.fields.push({
+        if (command.options.examples > 1) embed.fields.push({
             name: '❯ Examples',
             value: `**${command.options.examples.join(', ')}**`,
             inline: true

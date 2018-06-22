@@ -37,7 +37,8 @@ module.exports = class RemClient extends Eris {
             eject: ":eject:",
             input: ":inbox_tray:",
             output: ":output_tray:",
-            loading: "<a:remLoading:459273346131951616>"
+            loading: "<a:remLoading:459273346131951616>",
+            love: "<:blobcatlove:459410911363596289>"
         };
 
         mongoose.connect('mongodb://127.0.0.1:27017');
