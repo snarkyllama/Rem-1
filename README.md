@@ -1,14 +1,14 @@
 # Rem [![Discord](https://discordapp.com/api/guilds/382725233695522816/embed.png)](https://rembot.xyz/discord) [![Discord Bots](https://discordbots.org/api/widget/status/447229568282132510.svg)](https://discordbots.org/bot/447229568282132510) [![Discord Bots](https://discordbots.org/api/widget/upvotes/447229568282132510.svg)](https://discordbots.org/bot/447229568282132510) [![Discord Bots](https://discordbots.org/api/widget/lib/447229568282132510.svg)](https://discordbots.org/bot/447229568282132510) [![Discord Bots](https://discordbots.org/api/widget/owner/447229568282132510.svg)](https://discordbots.org/bot/447229568282132510)
 Hewwo~ I am Rem, a Discord Bot made in the [Eris](https://abal.moe/Eris) library! >3<
 
-## Installation
-We won't provide how to install Rem.
-
 ## Contributions
-Oh, you wanna contribute to Rem's development? We might have a contribution list soon!
+Contributions are always accepted, whether big or small.
+
+**augu am gonna do contrib guidelines soon TMTMTM**
 
 ## Support
-If you really need support about Rem, join **August's Humble Abode**! If you really need help with Rem, Us developers or staff members won't provide details how to install Rem.
+If you need support, join **August's Humble Abode**.  
+!! We will not help you when it comes to selfhosting Rem.
 
 [![August's Humble Abode](https://discordapp.com/api/guilds/382725233695522816/embed.png?style=banner3)](https://rembot.xyz/discord)
 
