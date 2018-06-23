@@ -38,7 +38,7 @@ module.exports = class VoiceConnection {
             this.queue.push(...results);
             this.channel.createMessage({
                 embed: {
-                    description: ":white_check_mark: Added `" + results.length + "` songs to the queue~",
+                    description: `:white_check_mark: Added \`${results.length}\` songs to the queue~`,
                     color: this.client.utils.color
                 }
             });
